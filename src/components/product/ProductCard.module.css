@@ -1,0 +1,28 @@
+
+.music{
+    font-style:italic;
+    
+}
+.album{
+    font-style:inherit;
+}
+
+.price{
+    margin-right:200px ;
+}
+.button{
+    background-color:rgb(155, 151, 151) ;
+    border-radius: 15%;
+}
+
+.body{
+    display:inline-block;
+    box-shadow: 0 0 5px rgba(75,75,75,75);
+    max-width:100% ;
+    justify-content: space-around;
+    align-Items:flex-start;
+    margin-right:150px ;
+    margin-left:150px ;
+    margin-bottom:150px ;
+
+}
