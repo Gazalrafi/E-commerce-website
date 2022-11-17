@@ -1,5 +1,10 @@
+
+
 import classes from './NavBar.module.css';
-const NavBar=()=>{
+import HeadeCartButton from '../Cart/HeaderCartButton.js';
+
+const NavBar=(props)=>{
+
 return(
     <header>
         <div className={classes.navmenu}>
@@ -13,8 +18,11 @@ return(
                 <li>
                     <a href='a'>ABOUT</a>
                 </li>
+             <HeadeCartButton onClick={props.onClick}/>
             </ul>
-
+            
+          
+        
         </div>
     </header>
 );

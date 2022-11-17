@@ -2,10 +2,10 @@
 import classes from './Header.module.css';
 import NavBar from './Nav';
 
-const Header=()=>{
+const Header=(props)=>{
     return <>
     <header>
-    <NavBar/>
+    <NavBar onClick={props.onShowCart}/>
         <div className={classes.header}>
             <h1>The Generics</h1>
         </div>

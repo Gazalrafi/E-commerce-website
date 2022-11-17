@@ -5,7 +5,7 @@ import classes from './ProductCard.module.css';
 const ProductCard=(props)=>{
 return (
 <>
-<section className={classes.all}>
+
     {props.data.map((currData)=>{
 return(
  
@@ -22,17 +22,14 @@ return(
 <img src={currData.imageUrl} alt='images'/>
 </div>
 <span className={classes.price}>{currData.price}</span>
-<button className={classes.button}>Order</button>
+<button className={classes.button}>ADD TO Cart</button>
 </div>
 </div>
-
-
 </>
 )
 })}
-</section>
-</>
 
+</>
 )
 }
 export default ProductCard;

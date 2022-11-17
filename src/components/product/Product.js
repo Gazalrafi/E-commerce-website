@@ -13,6 +13,8 @@ const Product=
         imageUrl: 'images/Album 1.png',
 
         album:'Album 1',
+
+        quantity:2,
         
         },
         
@@ -26,6 +28,8 @@ const Product=
         imageUrl: 'images/Album 2.png',
 
         album:'Album 2',
+
+        quantity:2,
         
         },
         
@@ -39,6 +43,8 @@ const Product=
         imageUrl: 'images/Album 3.png',
 
         album:'Album 3',
+
+        quantity:3,
         
         },
         
@@ -50,6 +56,8 @@ const Product=
         price: 'Rs.100',
         
         imageUrl: 'images/Album 4.png',
+
+        quantity:1,
 
         album:'Album 4',
         
