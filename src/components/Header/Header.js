@@ -1,6 +1,7 @@
 
 import classes from './Header.module.css';
-import NavBar from './Nav';
+import NavBar from './Nav.js';
+
 
 const Header=(props)=>{
     return <>

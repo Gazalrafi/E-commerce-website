@@ -1,14 +1,15 @@
+import ProductCard from './ProductCard.js';
 
 
-const Product=
+const itemList=
      [
 
         {
-        id:1,
+        id:'m1',
         
         title: 'Colors',
         
-        price: 'Rs.100',
+        price: 100,
         
         imageUrl: 'images/Album 1.png',
 
@@ -19,11 +20,11 @@ const Product=
         },
         
         {
-        id:2,
+        id:'m2',
         
         title: 'Black and white Colors',
         
-        price: 'Rs.50',
+        price: 50,
         
         imageUrl: 'images/Album 2.png',
 
@@ -34,11 +35,11 @@ const Product=
         },
         
         {
-        id:3,
+        id:'m3',
         
         title: 'Yellow and Black Colors',
         
-        price: 'Rs.70',
+        price: 70,
         
         imageUrl: 'images/Album 3.png',
 
@@ -49,11 +50,11 @@ const Product=
         },
         
         {
-        id:4,
+        id:'m4',
         
         title: 'Blue Color',
         
-        price: 'Rs.100',
+        price: 100,
         
         imageUrl: 'images/Album 4.png',
 
@@ -64,6 +65,23 @@ const Product=
         }
         
         ];
+
+const Product=()=>{
+      
+   const list= itemList.map((currData)=>
+        <ProductCard
+        id={currData.id}
+        key={currData.id}
+        price={currData.price}
+        image={currData.imageUrl}
+        album={currData.album}/>
+)
+        return(  <div>
+                {list}
+                </div>
+        )
+        
+}
         
 
 export default Product;

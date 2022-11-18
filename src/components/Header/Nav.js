@@ -1,7 +1,6 @@
 
-
-import classes from './NavBar.module.css';
 import HeadeCartButton from '../Cart/HeaderCartButton.js';
+import classes from './NavBar.module.css';
 
 const NavBar=(props)=>{
 
@@ -18,7 +17,7 @@ return(
                 <li>
                     <a href='a'>ABOUT</a>
                 </li>
-             <HeadeCartButton onClick={props.onClick}/>
+                <HeadeCartButton onClick={props.onClick}/>
             </ul>
             
           

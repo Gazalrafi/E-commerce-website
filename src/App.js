@@ -1,7 +1,9 @@
 import {useState}  from 'react';
 import Header from './components/Header/Header.js';
-import ProductView from './components/product/ProductView.js';
+import Product from './components/product/Product.js';
 import Cart from './components/Cart/Cart.js';
+import CartProvider from './store/CartProvider.js';
+
 
 function App() {
 const [cartIsShown,setCartIsshown]=useState(false);
@@ -15,13 +17,15 @@ const HideCartHandler=()=>{
 }
 
   return (
-    <>
+  <CartProvider>
+
    {cartIsShown && <Cart onClose={HideCartHandler}/>}
     <Header onShowCart={cartAddHandler}/>
       <main>
-    <ProductView/>
+    <Product/>
       </main>
-    </>
+      
+  </CartProvider>
   );
 }
 

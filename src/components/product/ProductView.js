@@ -5,9 +5,10 @@ import ProductCard from './ProductCard.js';
 const ProductView=()=>{
 const [productData,setProductData]=useState(Product);
 
+
 return (
     <>
-    <ProductCard data={productData}/>
+    <ProductCard data={productData} />
     </>
 );
 }

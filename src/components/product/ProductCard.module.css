@@ -1,18 +1,28 @@
 
 .music{
     font-style:italic;
-    
+    text-align:center;
 }
 .album{
     font-style:inherit;
+    text-align:center;
 }
-
+.image{
+    margin-right: 0px;
+    margin-bottom:5px ;
+}
 .price{
     margin-right:200px ;
 }
 .button{
     background-color:rgb(128, 184, 236) ;
     border-color: grey;
+    font-weight: bold;
+    position: relative;
+    top:30px;
+    left:120px;
+    border-radius: 10px;
+    
 }
 
 .body{
@@ -26,3 +36,4 @@
     margin-bottom:150px ;
 
 }
+
