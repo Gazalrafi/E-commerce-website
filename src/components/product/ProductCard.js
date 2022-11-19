@@ -23,7 +23,7 @@ return (
 <>
 
 <li className={classes.body}>
-                <div key={props.id}>
+                <div>
                 <div className={classes.music}>
                     <h2>MUSIC</h2>
                 </div>

@@ -1,8 +1,12 @@
+import React from 'react';
 import {useState}  from 'react';
+import {Route,Switch} from "react-router-dom";
 import Header from './components/Header/Header.js';
 import Product from './components/product/Product.js';
 import Cart from './components/Cart/Cart.js';
 import CartProvider from './store/CartProvider.js';
+import FooterIcon from './components/footer/FooterIcon.js';
+import About from './components/Nav/About.js';
 
 
 function App() {
@@ -17,15 +21,27 @@ const HideCartHandler=()=>{
 }
 
   return (
+   <div>
   <CartProvider>
 
    {cartIsShown && <Cart onClose={HideCartHandler}/>}
+  
     <Header onShowCart={cartAddHandler}/>
       <main>
     <Product/>
-      </main>
+      </main>  
+      <footer>
+        <FooterIcon/>
+      </footer>
+      
       
   </CartProvider>
+  <Switch>
+      <Route path='/about'><About/></Route>
+    </Switch>
+  </div> 
+    
+
   );
 }
 

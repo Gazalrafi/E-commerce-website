@@ -1,0 +1,33 @@
+.socialmedia {
+    grid-column: 4/5;
+  }
+  
+  .socialmedia ul {
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 10fr repeat(3, 1fr);
+    align-items: center;
+    justify-content: flex-end;
+    list-style:none;
+    margin-top: -100px;
+  }
+  
+  .socialmedia ul li {
+    text-align: right;
+  }
+  
+  .socialmedia ul li:first-child {
+    grid-column:2/3;
+  }
+
+  .facebook {
+    color: #3b5998;
+  }
+  
+  .instagram {
+    color: #c32aa3;
+  }
+  
+  .youtube {
+    color: #ff0000;
+  }

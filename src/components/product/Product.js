@@ -1,3 +1,4 @@
+import React from 'react';
 import ProductCard from './ProductCard.js';
 
 
@@ -62,7 +63,7 @@ const itemList=
 
         album:'Album 4',
         
-        }
+        },
         
         ];
 

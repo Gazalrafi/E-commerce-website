@@ -1,3 +1,4 @@
+import React from 'react';
 import {useRef,useState} from 'react';
 import classes from './ProductFormButton.module.css';
 import Input from '../UI/Input.js';
@@ -15,7 +16,7 @@ const ProductFormButton=(props)=>{
     
     if(
       enteredAmount.trim().length===0 || enteredAmountNumber < 1 || 
-      enteredAmountNumber>5
+      enteredAmountNumber>20
       ){
         setAmountIsValid(false);
         return ;
@@ -24,7 +25,7 @@ const ProductFormButton=(props)=>{
 props.onClick(enteredAmountNumber);
 };
 
-return <>
+return (
 <form className={classes.form} onSubmit={submitHandler}>
 <Input 
     ref={amountInputRef}
@@ -41,6 +42,6 @@ return <>
 <button>Add To Cart</button>
 {!amountIsValid && <p>please enter a valid amount (1-20).</p>}
 </form>
-</>
+)
 }
 export default ProductFormButton;

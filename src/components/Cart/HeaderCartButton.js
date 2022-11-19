@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import React from 'react';
 
 import classes from './HeaderCartButton.module.css';
 import CartIcon from  './CartIcon.js';
