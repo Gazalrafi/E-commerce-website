@@ -12,7 +12,7 @@ return(
         <div className={classes.navmenu}>
             <ul>
                 <li>
-                    <Link to='/'>HOME</Link>
+                    <Link to='/home'>HOME</Link>
                 </li>
                 <li>
                     <Link to='/'>STORE</Link>

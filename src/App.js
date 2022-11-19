@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart.js';
 import CartProvider from './store/CartProvider.js';
 import FooterIcon from './components/footer/FooterIcon.js';
 import About from './components/Nav/About.js';
+import Home from './components/Nav/Home.js';
 
 
 function App() {
@@ -38,6 +39,7 @@ const HideCartHandler=()=>{
   </CartProvider>
   <Switch>
       <Route path='/about'><About/></Route>
+      <Route path='/home'><Home/></Route>
     </Switch>
   </div> 
     

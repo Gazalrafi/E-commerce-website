@@ -1,0 +1,81 @@
+.header{
+    font-size:70px;
+    color:white;
+    background-color:grey;
+    text-align: center;
+    margin-top:-50px ;
+    padding:1px;
+    
+}
+.tours{
+    font-style: italic;
+    font-size: larger;
+    text-align:center ;
+    font-size: bold;
+}
+.subheading{
+    border-style:groove;
+    text-align: center;
+    background-color: rgb(25, 134, 134);
+
+}
+.buttonimage{
+    width:70px;
+}
+.lowerheader{
+    font-size:50px;
+    color:white;
+    background-color:rgb(58, 166, 209);
+    text-align: center;
+    margin-top:-50px ;
+}
+.main{
+    text-align:center;  
+}
+.one {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+
+.two {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+.three {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+.four {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+.five {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+.six {
+    border-bottom: solid black;
+    border-width:1px;
+    display:flex;
+    justify-content: space-around;
+   
+}
+.tickets{
+    border-style: groove;
+    background-color: rgb(86, 150, 167);
+}
