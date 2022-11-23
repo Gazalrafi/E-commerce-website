@@ -3,6 +3,7 @@ import HeadeCartButton from '../Cart/HeaderCartButton.js';
 import {Link} from "react-router-dom";
 import classes from './NavBar.module.css';
 
+
 const NavBar=(props)=>{
 
 return(
@@ -20,7 +21,11 @@ return(
                 <li>
                     <Link to='/about'>ABOUT</Link>
                 </li>
+                <li>
+                    <Link to='/contact'>CONTACT US</Link>
+                </li>
                 <HeadeCartButton onClick={props.onClick}/>
+               
             </ul>
         </div>
     </nav>
