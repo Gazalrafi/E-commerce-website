@@ -1,10 +1,15 @@
 import classes from './About.module.css';
 import React from 'react';
 import FooterIcon from '../footer/FooterIcon.js';
+import NavBar from './Nav.js';
 
 const About=()=>{
 return (
+    
     <section >
+        <header>
+            <NavBar/>
+        </header>
     <div className={classes.header}>
     <h1>The Generics</h1>
     </div>

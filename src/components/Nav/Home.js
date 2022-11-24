@@ -1,11 +1,13 @@
 import React from 'react';
 import classes from './Home.module.css';
 import FooterIcon from '../footer/FooterIcon.js';
-
+import NavBar from './Nav.js';
 
 const Home=()=>{
 return (
     <section >
+      <heade> <NavBar/></heade>
+     
     <div className={classes.header}>
     <h1>The Generics</h1>
     </div>

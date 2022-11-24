@@ -4,6 +4,11 @@ import {useContext} from 'react';
 import classes from './ProductCard.module.css';
 import CartContext from '../../store/cart-context.js'
 import ProductFormButton from './ProductFormButton';
+import {NavLink} from "react-router-dom";
+
+
+
+
 
 const ProductCard=(props)=>{
     const cartCtx=useContext(CartContext);
@@ -30,14 +35,19 @@ return (
                 <div className={classes.album}>
                     <h4>{props.album}</h4>
                 </div>
-                <div className={classes.image}>
-                <img src={props.image} alt='images'/>
+                <NavLink to='/product'>
+                <div  className={classes.image}>
+                    <div id={props.id}/>
+                <img src={props.image} alt='images'/> 
                 </div>
-                <span className={classes.price}>{props.price}</span>
-                
+                </NavLink>
+                <div className={classes.price}>{props.price}</div>
+               
     </div>   
-    <ProductFormButton onClick={addToCartHandler}/>  
+    <ProductFormButton onClick={addToCartHandler}/>
+    
 </li>
+
 
 </>
 )

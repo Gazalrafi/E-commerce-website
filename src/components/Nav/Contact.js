@@ -1,4 +1,5 @@
 import React,{useRef} from 'react';
+import NavBar from './Nav.js';
 
 const Contact=()=>{
     const nameRef=useRef('');
@@ -29,7 +30,9 @@ const Contact=()=>{
         }
     
 return (
+   
 <form onSubmit={submitHandler}>
+<NavBar/>
     <div>
         <label>Name:</label>
         <input type='text' id="name" ref={nameRef}/>

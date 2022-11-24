@@ -68,20 +68,23 @@ const itemList=
         ];
 
 const Product=()=>{
-      
+     
    const list= itemList.map((currData)=>
+       
         <ProductCard
         id={currData.id}
         key={currData.id}
         price={currData.price}
         image={currData.imageUrl}
-        album={currData.album}/>
+        album={currData.album}
+        />
+       
 )
         return(  <div>
                 {list}
                 </div>
         )
-        
+      
 }
         
 

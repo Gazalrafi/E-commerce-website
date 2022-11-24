@@ -1,6 +1,6 @@
 import React from 'react';
 import HeadeCartButton from '../Cart/HeaderCartButton.js';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import classes from './NavBar.module.css';
 
 
@@ -13,16 +13,16 @@ return(
         <div className={classes.navmenu}>
             <ul>
                 <li>
-                    <Link to='/home'>HOME</Link>
+                    <NavLink to='/home'>HOME</NavLink>
                 </li>
                 <li>
-                    <Link to='/'>STORE</Link>
+                    <NavLink to='/'>STORE</NavLink>
                 </li>
                 <li>
-                    <Link to='/about'>ABOUT</Link>
+                    <NavLink to='/about'>ABOUT</NavLink>
                 </li>
                 <li>
-                    <Link to='/contact'>CONTACT US</Link>
+                    <NavLink to='/contact'>CONTACT US</NavLink>
                 </li>
                 <HeadeCartButton onClick={props.onClick}/>
                

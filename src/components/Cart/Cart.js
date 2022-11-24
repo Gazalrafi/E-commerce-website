@@ -24,7 +24,7 @@ const cartItemAddHandler=item=>{
 
 const cartItems=(<ul className={classes['cart-items']}>{ cartCtx.items.map((item)=>
  
-<CartItem
+ <CartItem
 id={item.id}
 key={item.id}
 price={item.price}

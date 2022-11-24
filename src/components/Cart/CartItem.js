@@ -13,7 +13,7 @@ const CartItem = (props) => {
         <div className={classes.image}>{props.image}</div>
         <div className={classes.summary}>
           <span className={classes.price}>{price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
+          <span className={classes.amount}>x {props.amount*1}</span>
         </div>
       </div>
       <div className={classes.actions}>

@@ -1,54 +1,50 @@
 import React from 'react';
-import {useState}  from 'react';
-import {Route,Switch} from "react-router-dom";
-import Header from './components/Header/Header.js';
-import Product from './components/product/Product.js';
-import Cart from './components/Cart/Cart.js';
-import CartProvider from './store/CartProvider.js';
-import FooterIcon from './components/footer/FooterIcon.js';
+import { useContext } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+import Layout from './componentsNew/Layout/Layout';
+import UserProfile from './componentsNew/Profile/UserProfile';
+import AuthPage from './pages/AuthPage';
+import HomePage from './pages/HomePage';
+import AuthContext from './store/auth-context';
+import StartingPageContent from './componentsNew/StartingPage/StartingPageContent';
 import About from './components/Nav/About.js';
 import Home from './components/Nav/Home.js';
 import Contact from './components/Nav/Contact.js';
-
-
-
+import ProductCard from './components/product/ProductCard.js';
 
 
 function App() {
-const [cartIsShown,setCartIsshown]=useState(false);
-
-const cartAddHandler=()=>{
-  setCartIsshown(true);
-}
-
-const HideCartHandler=()=>{
-  setCartIsshown(false);
-}
+  const authCtx = useContext(AuthContext);
 
   return (
-   <div>
-  <CartProvider>
+    <Layout>
+      <Switch>
+        {authCtx.isLoggedIn && <Route path='/' exact>
+          <HomePage />
+        </Route>}
+        {!authCtx.isLoggedIn && (
+          <Route path='/auth'>
+            <AuthPage />
+          </Route>
+        )}
+        <Route path='/profile'>
+          {authCtx.isLoggedIn && <UserProfile />}
+          {!authCtx.isLoggedIn && <Redirect to='/auth' />}
+        </Route>
+        
 
-   {cartIsShown && <Cart onClose={HideCartHandler}/>}
-  
-    <Header onShowCart={cartAddHandler}/>
-      <main>
-    <Product/>
-      </main>  
-      <footer>
-        <FooterIcon/>
-      </footer>
-      
-      
-  </CartProvider>
-  <Switch>
-      <Route path='/about'><About/></Route>
+       <Route path='/about'><About/></Route>
       <Route path='/home'><Home/></Route>
       <Route path='/contact'><Contact/></Route>
-    </Switch>
-  </div> 
-    
+      <Route path='/product'><ProductCard/></Route>
+      </Switch>
 
+
+     
+      <StartingPageContent />;
+    </Layout>
+    
   );
 }
 
