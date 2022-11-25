@@ -12,13 +12,18 @@ import About from './components/Nav/About.js';
 import Home from './components/Nav/Home.js';
 import Contact from './components/Nav/Contact.js';
 import ProductCard from './components/product/ProductCard.js';
+import ProductImageA from './components/product/ProductImageA.js';
+import ProductImageB from './components/product/ProductImageB.js';
+import ProductImageC from './components/product/ProductImageC.js';
+import ProductImageD from './components/product/ProductImageD.js';
 
-
-function App() {
+function App(props) {
   const authCtx = useContext(AuthContext);
 
   return (
+   
     <Layout>
+     
       <Switch>
         {authCtx.isLoggedIn && <Route path='/' exact>
           <HomePage />
@@ -38,11 +43,17 @@ function App() {
       <Route path='/home'><Home/></Route>
       <Route path='/contact'><Contact/></Route>
       <Route path='/product'><ProductCard/></Route>
-      </Switch>
 
+      <Route path='/imageA'><ProductImageA/></Route>
+      <Route path='/imageB'><ProductImageB/></Route>
+      <Route path='/imageC'><ProductImageC/></Route>
+      <Route path='/imageD'><ProductImageD/></Route>
+      </Switch>
+      
 
      
       <StartingPageContent />;
+     
     </Layout>
     
   );

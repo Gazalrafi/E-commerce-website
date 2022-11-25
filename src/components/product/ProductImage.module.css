@@ -1,0 +1,33 @@
+.column{
+   
+    box-shadow: 0 0 5px rgba(75,75,75,75);
+    box-sizing: content-box;
+    max-width:100% ;
+    justify-content: space-around;
+    margin-left: 500px;
+    align-Items:flex-start;
+    display:flex;
+    
+}
+.boximage{
+ width: 100px;
+ margin-left: 50px;
+ margin-top: 75px;
+}
+.headline{
+    text-align: center;
+}
+.button{
+    margin-left: 850px;
+    margin-top:50px;
+    width: 200px;
+    height:30px;
+    border-end-end-radius: 10px ;
+    border-start-start-radius: 10px;
+    background-color: rgb(50, 128, 128);
+    border-color: rgb(70, 141, 141);
+    color: white;
+}
+.mainscreen{
+    display:grid;
+}

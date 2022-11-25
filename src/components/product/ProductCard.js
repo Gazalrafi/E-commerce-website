@@ -35,12 +35,31 @@ return (
                 <div className={classes.album}>
                     <h4>{props.album}</h4>
                 </div>
-                <NavLink to='/product'>
+                
                 <div  className={classes.image}>
                     <div id={props.id}/>
-                <img src={props.image} alt='images'/> 
+                <NavLink to='/imageA'>
+                 <div>
+                <img src={props.image1} alt='images'/> 
+                </div>
+                </NavLink >
+                <NavLink to='/imageB'>
+                <div>
+                <img src={props.image2} alt='images'/> 
                 </div>
                 </NavLink>
+                <NavLink to='/imageC'>
+                <div>
+                <img src={props.image3} alt='images'/> 
+                </div>
+                </NavLink>
+                <NavLink to='/imageD'>
+                <div>
+                <img src={props.image4} alt='images'/> 
+                </div>
+                </NavLink>
+                </div>
+                
                 <div className={classes.price}>{props.price}</div>
                
     </div>   

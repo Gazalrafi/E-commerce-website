@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard.js';
 
 
+
 const itemList=
      [
 
@@ -11,8 +12,9 @@ const itemList=
         title: 'Colors',
         
         price: 100,
+
         
-        imageUrl: 'images/Album 1.png',
+        imageUrlA: 'images/Album 1.png',
 
         album:'Album 1',
 
@@ -27,7 +29,7 @@ const itemList=
         
         price: 50,
         
-        imageUrl: 'images/Album 2.png',
+        imageUrlB: 'images/Album 2.png',
 
         album:'Album 2',
 
@@ -42,7 +44,7 @@ const itemList=
         
         price: 70,
         
-        imageUrl: 'images/Album 3.png',
+        imageUrlC: 'images/Album 3.png',
 
         album:'Album 3',
 
@@ -57,7 +59,7 @@ const itemList=
         
         price: 100,
         
-        imageUrl: 'images/Album 4.png',
+        imageUrlD: 'images/Album 4.png',
 
         quantity:1,
 
@@ -75,7 +77,10 @@ const Product=()=>{
         id={currData.id}
         key={currData.id}
         price={currData.price}
-        image={currData.imageUrl}
+        image1={currData.imageUrlA}
+        image2={currData.imageUrlB}
+        image3={currData.imageUrlC}
+        image4={currData.imageUrlD}
         album={currData.album}
         />
        
