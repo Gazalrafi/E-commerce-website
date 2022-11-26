@@ -50,7 +50,7 @@ return (
     src={mainImage.imageUrl} 
     alt='images'
     className={classes.mainscreen}
-    key={mainImage.key}
+    key={mainImage.id}
     />
    
 </div>

@@ -14,6 +14,9 @@ const totalAmount=`Rs.${cartCtx.totalAmount}`;
 
 const hasItems=cartCtx.items.length>0;
 
+const items=cartCtx.items;
+addDataHandler(items)
+
 const cartItemRemoveHandler=(id)=>{
     cartCtx.removeItem(id);
 };
@@ -36,6 +39,19 @@ onAdd={cartItemAddHandler.bind(null,item)}/>
 
 )}   
 </ul>)
+async function addDataHandler(){
+
+ const response=await fetch('https://react-http-4a933-default-rtdb.firebaseio.com/itemdata.json',{
+    method: 'POST',
+    body: JSON.stringify(items),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+ })
+ const postData = await response.json();
+    console.log(postData);
+
+}
 return (
    <Modal>
         {cartItems}
@@ -45,7 +61,7 @@ return (
     </div>
     <div className={classes.actions}>
     <button className={classes['button--alt']} onClick={props.onClose}>X</button>
-   {hasItems && <button>Order</button>}
+   {hasItems && <button onClick={addDataHandler}>Order</button>}
     </div>
     </Modal>
 )
