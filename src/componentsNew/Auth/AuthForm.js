@@ -3,6 +3,7 @@ import { useState ,useRef, useContext} from 'react';
 import AuthContext from '../../store/auth-context.js';
 import classes from './AuthForm.module.css';
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 
 const AuthForm = () => { 
@@ -72,37 +73,19 @@ const passwordInputRef=useRef();
 
 
     
-
-      if(isLogin){
-         fetch('https://react-http-4a933-default-rtdb.firebaseio.com/itemdata.json',{
-            method: 'POST',
-            body: JSON.stringify({
-              email:enteredEmail,
-              password:enteredPassword,
-              returnSecureToken:true 
-            }),
-            headers: {
-              'Content-Type': 'application/json'
-            }
-         }).then((res)=>{
-          setIsLoading(false);
-          console.log(res)
-          if(res.ok){
-         return res.json();
-      
-          }else{
-            return res.json().then((data)=>{
-            let errorMessage='Authentication failed!';
-            // if(data && data.error && data.error.message){
-            //   errorMessage=data.error.message;
-            // }
-            throw new Error(errorMessage);
-              
-            });
-         }
-        })
-        
+    axios({
+      method:'POST',
+      url:'https://crudcrud.com/api/89b6efdacabb4a4e8f7247d73a1db3da/cartData',
+      data:{
+          login:isLogin,
+          email:enteredEmail,
       }
+   })
+   .then((response)=>{
+     console.log(response)
+   }).catch((err)=>{
+      console.log(err)
+   })
       }
      
   
