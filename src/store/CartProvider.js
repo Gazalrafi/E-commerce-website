@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useReducer} from 'react';
 import CartContext from './cart-context.js';
 
@@ -9,9 +9,15 @@ const defaultCartState={
 };
 
 const cartReducer=(state,action)=>{
+    if(action.type==='FETCH'){
+       return{
+        items:state.items+action.payload,
+        totalAmount:state.totalAmount+action.payload
+       }
+    }
     if(action.type==='ADD'){
        
-       const updatedTotalAmount=state.totalAmount + action.item.price;
+       const updatedTotalAmount=state.totalAmount + action.item.price*action.item.amount;
 
        const existingCartItemIndex=state.items.findIndex(item=>item.id===action.item.id);//it will return the index of existing cart item
 
@@ -80,6 +86,31 @@ const removeItemFromCartHandler=(id)=>{
         id:id
     });
 };
+// useEffect(()=>{
+// const fetchData=async()=>{
+//     const response=await fetch ('https://new-project-10d5a-default-rtdb.firebaseio.com/newCart.json');
+    
+//     if(!response.ok){
+//        throw new Error('could not fetch cart data') ;
+//     }
+//     const data=await response.json();
+//     return data;
+// }
+// try{
+//    const cartData=  fetchData();
+//    dispatchCartAction({
+//      type:'FETCH',
+//      items:cartData.items || [],
+//      totalAmount:cartData.totalAmount,
+//    })
+   
+// }
+// catch(error){
+//    console.log(error)
+// }
+
+// },[]);
+
 const cartContext={
 items:cartState.items,
 totalAmount:cartState.totalAmount,

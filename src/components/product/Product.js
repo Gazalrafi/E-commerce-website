@@ -1,10 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard.js';
 
-
-
-const itemList=
-     [
+export const itemList=  [
 
         {
         id:'m1',
@@ -12,9 +9,10 @@ const itemList=
         title: 'Colors',
         
         price: 100,
-
         
-        imageUrlA: 'images/Album 1.png',
+        imageUrl: 'images/Album 1.png',
+
+        view1:'View full image',
 
         album:'Album 1',
 
@@ -27,9 +25,11 @@ const itemList=
         
         title: 'Black and white Colors',
         
-        price: 50,
+        price:50,
         
-        imageUrlB: 'images/Album 2.png',
+        imageUrl: 'images/Album 2.png',
+
+        view2:'View full image',
 
         album:'Album 2',
 
@@ -44,7 +44,9 @@ const itemList=
         
         price: 70,
         
-        imageUrlC: 'images/Album 3.png',
+        imageUrl: 'images/Album 3.png',
+
+        view3:'View full image',
 
         album:'Album 3',
 
@@ -59,7 +61,9 @@ const itemList=
         
         price: 100,
         
-        imageUrlD: 'images/Album 4.png',
+        imageUrl: 'images/Album 4.png',
+
+        view4:'View full image',
 
         quantity:1,
 
@@ -69,19 +73,24 @@ const itemList=
         
         ];
 
+        
+
 const Product=()=>{
      
    const list= itemList.map((currData)=>
        
         <ProductCard
-        id={currData.id}
-        key={currData.id}
+       
         price={currData.price}
-        image1={currData.imageUrlA}
-        image2={currData.imageUrlB}
-        image3={currData.imageUrlC}
-        image4={currData.imageUrlD}
+        img={currData.imageUrl}
         album={currData.album}
+        view1={currData.view1}
+        view2={currData.view2}
+        view3={currData.view3}
+        view4={currData.view4}
+        key={currData.id}
+        id={currData.id}
+
         />
        
 )

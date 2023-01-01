@@ -1,5 +1,6 @@
 import React,{useRef} from 'react';
 import NavBar from './Nav.js';
+import classes from './Contact.module.css';
 
 const Contact=()=>{
     const nameRef=useRef('');
@@ -30,25 +31,27 @@ const Contact=()=>{
         }
     
 return (
-   
-<form onSubmit={submitHandler}>
-<NavBar/>
     <div>
-        <label>Name:</label>
+    <NavBar/>
+<form onSubmit={submitHandler} className={classes.form}>
+
+    <div>
+        <label>Name:</label><br/>
         <input type='text' id="name" ref={nameRef}/>
     </div>
     <div>
-        <label>Email:</label>
+        <label>Email:</label><br/>
         <input type='email' id="email" ref={emailRef}/>
     </div>
     <div>
-        <label>phone no.:</label>
+        <label>contact no.</label><br/>
         <input type='number'id="phone" ref={phoneRef}/>
     </div>
     <div>
         <button>Submit</button>
     </div>
 </form>
+</div>
 );
 
 }

@@ -14,11 +14,13 @@ const ProductCard=(props)=>{
     const cartCtx=useContext(CartContext);
     
     const addToCartHandler=(amount)=>{
+
     cartCtx.addItem({
       id:props.id,
+      key:props.id,
+      img:props.img,
       price:props.price,
       album:props.album,
-      image:props.image,
       amount:amount
     });
      
@@ -37,28 +39,22 @@ return (
                 </div>
                 
                 <div  className={classes.image}>
-                    <div id={props.id}/>
+                
+                <img src={props.img} alt=''/>
+                
+                </div>
                 <NavLink to='/imageA'>
-                 <div>
-                <img src={props.image1} alt='images'/> 
-                </div>
-                </NavLink >
+                    <h4 style={{color:'maroon'}}>{props.view1}</h4>
+                </NavLink>
                 <NavLink to='/imageB'>
-                <div>
-                <img src={props.image2} alt='images'/> 
-                </div>
+                    <h4 style={{color:'maroon'}}>{props.view2}</h4>
                 </NavLink>
                 <NavLink to='/imageC'>
-                <div>
-                <img src={props.image3} alt='images'/> 
-                </div>
+                    <h4 style={{color:'maroon'}}>{props.view3}</h4>
                 </NavLink>
                 <NavLink to='/imageD'>
-                <div>
-                <img src={props.image4} alt='images'/> 
-                </div>
+                    <h4 style={{color:'maroon'}}>{props.view4}</h4>
                 </NavLink>
-                </div>
                 
                 <div className={classes.price}>{props.price}</div>
                

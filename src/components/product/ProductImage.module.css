@@ -4,21 +4,22 @@
     box-sizing: content-box;
     max-width:100% ;
     justify-content: space-around;
-    margin-left: 500px;
+    margin-left: 50px;
+    margin-right: 50px;
     align-Items:flex-start;
     display:flex;
     
 }
 .boximage{
- width: 100px;
+ width: 200px;
  margin-left: 50px;
- margin-top: 75px;
+ margin-top: 35px;
 }
 .headline{
     text-align: center;
 }
 .button{
-    margin-left: 850px;
+    margin-left: 550px;
     margin-top:50px;
     width: 200px;
     height:30px;

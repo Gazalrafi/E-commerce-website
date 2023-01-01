@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useContext} from 'react';
 import axios from 'axios';
 import classes from './Cart.module.css';
@@ -27,13 +27,13 @@ const cartItemAddHandler=item=>{
     cartCtx.addItem(item);
 };
 
-const cartItems=(<ul className={classes['cart-items']}>{ cartCtx.items.map((item)=>
+const cartItems=(<ul className={classes['cart-items']}>{ Array.from(cartCtx.items).map((item,index)=>
  
  <CartItem
 id={item.id}
-key={item.id}
+key={index}
 price={item.price}
-image={item.image}
+image={item.img}
 album={item.album}
 amount={item.amount}
 onRemove={cartItemRemoveHandler.bind(null,item.id)}
@@ -41,29 +41,44 @@ onAdd={cartItemAddHandler.bind(null,item)}/>
 
 )}   
 </ul>)
- function addDataHandler(){
 
- axios({
-    method:'POST',
-    url:'https://crudcrud.com/api/89b6efdacabb4a4e8f7247d73a1db3da/cartData',
-    data:{
-        items:items,
-    }
- })
- .then((response)=>{
-   console.log(response)
- }).catch((err)=>{
-    console.log(err)
- })
 
- axios.get("https://crudcrud.com/api/89b6efdacabb4a4e8f7247d73a1db3da/cartData")
- .then((response)=>{
-   response(response);
-  }).catch((err)=>{
-     console.log(err)
-  })
+  
+ async function addDataHandler(){
+  const response=await fetch('https://new-project-10d5a-default-rtdb.firebaseio.com/newCart.json',
+  {
+  method:'PUT',
+   body:JSON.stringify({
+      items:items,
+      totalAmount:totalAmount,
+   }),
+  }
  
-}
+  );
+  if(!response.ok){
+   throw new Error('sending cart data is failed');
+  }
+  else{
+    const data=await response.json();
+    console.log(data)
+  }
+  try{
+    // await addDataHandler();
+     console.log(response)
+    }
+    catch(error){
+      console.log(error)
+    
+    }
+};
+useEffect(()=>{
+
+addDataHandler();
+
+},[])
+
+
+
 return (
    <Modal>
     

@@ -9,8 +9,8 @@ const HeaderCartButton=(props)=>{
     
 const cartCtx=useContext(CartContext);
 
-const cartItemNumbers=cartCtx.items.reduce((curNumber,item)=>{
-    return curNumber + item.price;
+const cartItemNumbers=Array.from(cartCtx.items).reduce((curNumber,item)=>{
+    return curNumber + item.amount;
 },0);
 
 return <button className={classes.button} onClick={props.onClick}>
