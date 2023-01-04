@@ -1,5 +1,5 @@
 import React from 'react';
-import HeadeCartButton from '../Cart/HeaderCartButton.js';
+import HeaderCartButton from './HeaderCartButtton';
 import {NavLink} from "react-router-dom";
 import classes from './NavBar.module.css';
 
@@ -24,8 +24,9 @@ return(
                 <li>
                     <NavLink to='/contact'>CONTACT US</NavLink>
                 </li>
-                <HeadeCartButton onClick={props.onClick}/>
-               
+                <li>
+                <HeaderCartButton onClick={props.onClick}/>
+                </li>
             </ul>
         </div>
     </nav>

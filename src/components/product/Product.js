@@ -16,7 +16,6 @@ export const itemList=  [
 
         album:'Album 1',
 
-        quantity:2,
         
         },
         
@@ -32,8 +31,6 @@ export const itemList=  [
         view2:'View full image',
 
         album:'Album 2',
-
-        quantity:2,
         
         },
         
@@ -50,7 +47,6 @@ export const itemList=  [
 
         album:'Album 3',
 
-        quantity:3,
         
         },
         
@@ -64,8 +60,6 @@ export const itemList=  [
         imageUrl: 'images/Album 4.png',
 
         view4:'View full image',
-
-        quantity:1,
 
         album:'Album 4',
         

@@ -1,4 +1,3 @@
-
 import HeadeCartButton from '../Cart/HeaderCartButton.js';
 import classes from './NavBar.module.css';
 

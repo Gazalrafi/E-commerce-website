@@ -3,17 +3,16 @@ import React from 'react';
 import {useContext} from 'react';
 import classes from './ProductCard.module.css';
 import CartContext from '../../store/cart-context.js'
-import ProductFormButton from './ProductFormButton';
 import {NavLink} from "react-router-dom";
-
+import Button from '../UI/Button';
 
 
 
 
 const ProductCard=(props)=>{
     const cartCtx=useContext(CartContext);
-    
-    const addToCartHandler=(amount)=>{
+    const price=`Rs.${props.price}`
+    const addToCartHandler=()=>{
 
     cartCtx.addItem({
       id:props.id,
@@ -21,7 +20,7 @@ const ProductCard=(props)=>{
       img:props.img,
       price:props.price,
       album:props.album,
-      amount:amount
+      quantity:1
     });
      
     };
@@ -29,7 +28,7 @@ const ProductCard=(props)=>{
 return (
 <>
 
-<li className={classes.body}>
+<li className={classes.body} key={props.id} id={props.id}>
                 <div>
                 <div className={classes.music}>
                     <h2>MUSIC</h2>
@@ -56,10 +55,10 @@ return (
                     <h4 style={{color:'maroon'}}>{props.view4}</h4>
                 </NavLink>
                 
-                <div className={classes.price}>{props.price}</div>
+                <div className={classes.price} style={{fontWeight:'bold'}}>{price}</div>
                
     </div>   
-    <ProductFormButton onClick={addToCartHandler}/>
+    <Button onClick={addToCartHandler}>Add to Cart</Button>
     
 </li>
 
